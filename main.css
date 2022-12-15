@@ -53,6 +53,11 @@ video {
     background-color: transparent;
 }
 
+#remoteVideo {
+    height: 90vh;
+    border-radius: 6px;
+}
+
 #localVideo {
     position: fixed;
     width: 20vw;
