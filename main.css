@@ -53,6 +53,13 @@ video {
     background-color: transparent;
 }
 
+#localVideo {
+    position: fixed;
+    width: 20vw;
+    right: 0;
+    bottom: 0;
+}
+
 #callId {
     padding: 10px;
     border-radius: 6px;
