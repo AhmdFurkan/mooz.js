@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Quicksand";
+    background-color: #000000ee;
+    color: white;
+}
+
+.navbar {
+    width: 95vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+}
+
+.join {
+    margin: 0 20px;
+}
+
+#join {
+    background-color: rgb(0, 115, 255);
+    border: 1px solid rgb(0, 115, 255);
+    padding: 15px 25px;
+    border-radius: 6px;
+    color: white;
+}
+
+#create {
+    background-color: transparent;
+    border: 1px solid rgb(0, 115, 255);
+    padding: 15px 25px;
+    border-radius: 6px;
+}
+
+.content {
+    display: flex;
+    width: 95vw;
+    justify-content: space-between;
+}
+
+.videos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 900px;
+}
+
+.remoteVideo {
+    display: flex;
+}
+
+video {
+    width: 90%;
+    max-width: 500px;
+    margin: 10px;
+    border-radius: 6px;
+    background-color: transparent;
+}
+
+.screen {
+    width: 95%;
+}
+
+#screenVideo {
+    width: 100%;
+    max-width: 98%;
+}
+
+.chatWrapper {
+    width: 700px;
+    height: 90vh;
+    background-color: #ffffff00;
+    border-radius: 10px;
+}
+
+.chatContent {
+    width: 100%;
+    height: 90%;
+    background-color: #ffffff55;
+}
+
+.chatHeader {
+    padding: 20px 0;
+    font-size: 24px;
+    background-color: #ffffff22;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+}
+
+.chatSend {
+    display: flex;
+    width: 100%;
+    color: #fff;
+    background-color: #ffffffff;
+    justify-content: space-between;
+    height: 35px;
+    border-radius: 0 0 10px 10px;
+}
+
+i {
+    color: #000;
+}
