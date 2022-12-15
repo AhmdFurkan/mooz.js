@@ -6,7 +6,11 @@ const inputLocalPeerId=document.getElementById("myId");
 const inputRemotePeerId=document.getElementById("callId");
 const btnCall=document.getElementById("join");
 const btnScreen=document.querySelector(".screenBtn");
+const myId=document.getElementById("myId");
 
+myId.addEventListener("click",()=>{
+    navigator.clipboard.writeText(myId.value)
+})
 
 navigator.mediaDevices.getUserMedia({video:true,audio:true}).then(stream=>{
     localStream=stream;
@@ -25,13 +29,6 @@ peer.on("open",id=>{
       peer.send('Hello!');
 });
 
-btnScreen.addEventListener("click",()=>{
-    navigator.mediaDevices.getDisplayMedia({audio:true,video:true}).then(stream=>{
-        const screenVideo=document.getElementById("screenVideo")
-        screenVideo.srcObject=stream
-        screenVideo.play()
-    })
-})
 
 btnCall.addEventListener("click",()=>{
     const remotePeerId=inputRemotePeerId.value;
