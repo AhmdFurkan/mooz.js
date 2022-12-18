@@ -47,5 +47,6 @@ peer.on("call",(call)=>{
 })
 function createVideo(videoEl,stream){
     videoEl.srcObject=stream;
+    videoEl.mute();
     videoEl.onloadedmetadata=()=>videoEl.play()
 }
