@@ -15,7 +15,7 @@ const remoteVideo=document.getElementById("remoteVideo")
 let init =async () =>{
     await navigator.mediaDevices.getUserMedia({video:true,audio:true}).then(stream=>{
         createVideo(videoElement,stream)
-    })
+    });
 }
 
 peer.on("open",id=>{
