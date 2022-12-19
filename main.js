@@ -19,16 +19,6 @@ navigator.mediaDevices.getUserMedia({video:true,audio:true}).then(stream=>{
 })
 
 
-peer.on("open",id=>{
-    inputLocalPeerId.innerText=id;
-    peer.on('data', function(data) {
-        console.log('Received', data);
-      });
-  
-      // Send messages
-      peer.send('Hello!');
-});
-
 
 btnCall.addEventListener("click",()=>{
     const remotePeerId=inputRemotePeerId.value;
