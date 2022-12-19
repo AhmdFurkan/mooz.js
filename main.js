@@ -8,14 +8,10 @@ const btnCall=document.getElementById("join");
 const btnScreen=document.querySelector(".screenBtn");
 const myId=document.getElementById("myId");
 
-let init = async ()=>{
-    
-    navigator.mediaDevices.getUserMedia({video:true,audio:true}).then(stream=>{
-        const videoElement=document.getElementById("localVideo");
-        createVideo(videoElement,stream)
-    })
-
-}
+navigator.mediaDevices.getUserMedia({video:true,audio:true}).then(stream=>{
+    const videoElement=document.getElementById("localVideo");
+    createVideo(videoElement,stream)
+})
 
 peer.on("open",id=>{
     inputLocalPeerId.innerText=id;
@@ -38,7 +34,7 @@ peer.on("call",(call)=>{
     })
 })
 function createVideo(videoEl,stream){
-    if ('srcObject' in video) {
+    if ('srcObject' in videoEl) {
         videoEl.srcObject = stream
       } else {
         videoEl.src = window.URL.createObjectURL(stream) // for older browsers
@@ -46,4 +42,3 @@ function createVideo(videoEl,stream){
     videoEl.muted=true;
     videoEl.onloadedmetadata=()=>videoEl.play()
 }
-init();
