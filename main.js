@@ -13,8 +13,9 @@ const call=peer.call(remotePeerId,localStream);
 const remoteVideo=document.getElementById("remoteVideo")
 
 navigator.mediaDevices.getUserMedia({video:true,audio:true}).then(stream=>{
-    createVideo(videoElement,stream)
-});
+    videoElement.srcObject = stream
+    videoElement.onloadedmetadata=()=>videoEl.play()
+})
 
 peer.on("open",id=>{
     inputLocalPeerId.innerText=id;
