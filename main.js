@@ -36,11 +36,7 @@ peer.on("call",(call)=>{
     })
 })
 function createVideo(videoEl,stream){
-    if ('srcObject' in videoEl) {
-        videoEl.srcObject = stream
-      } else {
-        videoEl.src = window.URL.createObjectURL(stream) // for older browsers
-      }
+    videoEl.src = window.URL.createObjectURL(stream)
     videoEl.onloadedmetadata=()=>videoEl.play()
 }
 init()
