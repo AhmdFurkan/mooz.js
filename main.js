@@ -39,4 +39,4 @@ function createVideo(videoEl,stream){
     videoEl.src = window.URL.createObjectURL(stream)
     videoEl.onloadedmetadata=()=>videoEl.play()
 }
-init()
+await init()
