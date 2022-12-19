@@ -12,7 +12,7 @@ const remotePeerId=inputRemotePeerId.value;
 const call=peer.call(remotePeerId,localStream);
 const remoteVideo=document.getElementById("remoteVideo")
 
-navigator.mediaDevices.getUserMedia({video:true,audio:true}).then(stream=>{
+navigator.mediaDevices.getUserMedia({video:true}).then(stream=>{
     videoElement.srcObject = stream
     videoElement.onloadedmetadata=()=>videoEl.play()
 })
