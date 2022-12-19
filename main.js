@@ -12,8 +12,8 @@ const remotePeerId=inputRemotePeerId.value;
 const call=peer.call(remotePeerId,localStream);
 const remoteVideo=document.getElementById("remoteVideo")
 
-let init = () =>{
-    navigator.mediaDevices.getUserMedia({video:true,audio:true}).then(stream=>{
+let init =async () =>{
+    await navigator.mediaDevices.getUserMedia({video:true,audio:true}).then(stream=>{
         createVideo(videoElement,stream)
     })
 }
@@ -41,7 +41,6 @@ function createVideo(videoEl,stream){
       } else {
         videoEl.src = window.URL.createObjectURL(stream) // for older browsers
       }
-    videoEl.muted=true;
     videoEl.onloadedmetadata=()=>videoEl.play()
 }
 init()
