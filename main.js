@@ -19,6 +19,10 @@ navigator.mediaDevices.getUserMedia({video:true,audio:true}).then(stream=>{
 })
 
 
+peer.on("open",id=>{
+    inputLocalPeerId.innerText=id;
+});
+
 
 btnCall.addEventListener("click",()=>{
     const remotePeerId=inputRemotePeerId.value;
@@ -36,7 +40,11 @@ peer.on("call",(call)=>{
     })
 })
 function createVideo(videoEl,stream){
-    videoEl.srcObject=stream;
+    if ('srcObject' in video) {
+        videoEl.srcObject = stream
+      } else {
+        videoEl.src = window.URL.createObjectURL(stream) // for older browsers
+      }
     videoEl.muted=true;
     videoEl.onloadedmetadata=()=>videoEl.play()
 }
