@@ -17,6 +17,11 @@ body {
     align-items: center;
 }
 
+.navbar>a {
+    text-decoration: none;
+    color: #fff;
+}
+
 .buttons {
     display: flex;
     align-items: center;
@@ -40,6 +45,7 @@ body {
     padding: 10px 25px;
     border-radius: 6px;
     color: white;
+    margin: auto 10px;
 }
 
 .content {
