@@ -8,6 +8,9 @@ body {
     font-family: "Quicksand";
     background-color: #000000ee;
     color: white;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .navbar {
@@ -35,7 +38,7 @@ body {
 #join {
     background-color: rgb(0, 115, 255);
     border: 1px solid rgb(0, 115, 255);
-    padding: 10px 25px;
+    padding: 10px 10px;
     border-radius: 6px;
     color: white;
 }
@@ -51,7 +54,7 @@ body {
 
 .content {
     display: flex;
-    width: 95vw;
+    width: 80vw;
     justify-content: space-between;
 }
 
@@ -63,7 +66,6 @@ body {
 
 video {
     width: 100%;
-    margin: 10px;
     border-radius: 6px;
     background-color: transparent;
 }
@@ -81,6 +83,7 @@ video {
 }
 
 #callId {
-    padding: 10px;
+    padding: 10px 0;
+    width: 30vw;
     border-radius: 6px;
 }
