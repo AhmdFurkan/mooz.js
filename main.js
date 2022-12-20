@@ -7,14 +7,14 @@ const inputRemotePeerId=document.getElementById("callId");
 const btnCall=document.getElementById("join");
 const btnScreen=document.querySelector(".screenBtn");
 const myId=document.getElementById("myId");
-const videoElement=document.getElementById("localVideo");
-const remotePeerId=inputRemotePeerId.value;
-const call=peer.call(remotePeerId,localStream);
-const remoteVideo=document.getElementById("remoteVideo")
 
-navigator.mediaDevices.getUserMedia({video:true}).then(stream=>{
+
+navigator.mediaDevices.getUserMedia({video:true,audio:true}).then(stream=>{
+    localStream=stream;
+    const videoElement=document.getElementById("localVideo");
     createVideo(videoElement,stream)
 })
+
 
 peer.on("open",id=>{
     inputLocalPeerId.innerText=id;
@@ -22,7 +22,10 @@ peer.on("open",id=>{
 
 
 btnCall.addEventListener("click",()=>{
+    const remotePeerId=inputRemotePeerId.value;
+    const call=peer.call(remotePeerId,localStream);
     call.on("stream",stream=>{
+        const remoteVideo=document.getElementById("remoteVideo")
         createVideo(remoteVideo,stream)
     })
 })
@@ -34,6 +37,6 @@ peer.on("call",(call)=>{
     })
 })
 function createVideo(videoEl,stream){
-    videoEl.srcObject = stream
+    videoEl.srcObject=stream;
     videoEl.onloadedmetadata=()=>videoEl.play()
 }
