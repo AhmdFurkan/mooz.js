@@ -68,10 +68,14 @@ video {
     width: 100%;
     border-radius: 6px;
     background-color: transparent;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
 #remoteVideo {
     height: 85vh;
+    
     border-radius: 6px;
 }
 
