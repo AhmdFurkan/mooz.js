@@ -61,6 +61,7 @@ body {
 .videos {
     display: flex;
     align-items: center;
+    justify-content:center;
     width: 100%;
 }
 
@@ -75,7 +76,7 @@ video {
 
 #remoteVideo {
     height: 85vh;
-    
+    width:fit-content;
     border-radius: 6px;
 }
 
